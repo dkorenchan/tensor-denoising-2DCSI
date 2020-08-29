@@ -1,0 +1,19 @@
+README: tensor-denoising-2DCSI 
+
+This contains code for denoising of single-timepoint 2D CSI data using Tucker decomposition. Thus far, the datasets that this code uses are Varian .fid files, which are read in using supplementary MATLAB functions (see individual files - they are listed in the header of each file. You can likely find them in agentmess's hyperpolarized-MRI-toolbox). Additional notes:
+- The 13C imaging data matrix size is 128x8x8 (spectralxspatialxspatial) and is of hyperpolarized bicarbonate (161 ppm) and CO2 (125.5 ppm) for pH imaging
+- You will likely need to change some of the variables (listed in VARIABLES TO CHANGE section) pertaining in particular to data paths. As far as data files go, I don't have access to them anymore (since I don't work at UCSF any longer)
+
+Brief summary of files and directories:
+
+Within /Simulation_with_phantom_data:
+CSI3xTucker.m		This is the main function that I would suggest working with. This adds white Gaussian noise to a specified dataset and then denoises with the specified settings multiple times. You can also run tests to identify optimal denoising parameters. It performs a Tucker decomposition and denoising 3 different times along the processing pipeline.
+CSImultiTucker.m	Similar to the file above, but gradually apodizes bit by bit and denoises along the way. It seems to work just about the same.
+
+Within /Mouse_data_processing:
+mouseproc_TVD:		I believe this is the main file to work with. This does a 2x or 3x Tucker decomposition on mouse data and then analyzes the data with user-specified ROIs as well. ROIs can also be loaded from .mat files (again, I'd have to direct you to them).
+mouseproc_TVDmulti:	I wouldn't bother with this one. This is analogous to the multi-Tucker and doesn't seem to work well.
+
+Any questions, please contact me. Thanks!
+
+Dave K
