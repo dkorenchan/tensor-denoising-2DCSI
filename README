@@ -14,6 +14,6 @@ Within /Mouse_data_processing:
 mouseproc_TVD:		I believe this is the main file to work with. This does a 2x or 3x Tucker decomposition on mouse data and then analyzes the data with user-specified ROIs as well. ROIs can also be loaded from .mat files (again, I'd have to direct you to them).
 mouseproc_TVDmulti:	I wouldn't bother with this one. This is analogous to the multi-Tucker and doesn't seem to work well.
 
-Any questions, please contact me. Thanks!
+Any questions, please contact me at dave.korenchan@gmail.com. Thanks!
 
 Dave K
